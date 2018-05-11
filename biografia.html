@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+	<title> Biografia Salmo </title>
+	<head>
+	
+	<!-- uso css per lo sfondo, per il menu e per l'audio -->
+		<style>	
+			
+			html,body
+				{margin:0;padding:0;}
+			body
+				{margin:0; padding:0;background: #C20000; color: #666;font: 16px/28px;font-family: 'Open Sans', sans-serif; line-height:22px;}
+			h1,h2
+				{font-family:oswald;text-transform:uppercase;font-weight:normal;}
+			a
+				{color:#21aabd;text-decoration:none;}
+			a:hover
+				{color:#333;text-decoration:underline;}
+
+			
+			#container		{width: 960px;margin: 0 auto;background:#fff}
+	
+			#header			{width:920px;padding:20px;background:#21aabd;}
+			#header h1	{color:#fff;}
+
+	
+			audio { max-width: 200px; right: 650px;}
+			
+		
+				
+				
+			#header	{width:960px;padding:20px;background:#C20000;}
+
+			#container	{width: 960px;margin: 0 auto;background:#fff}
+			
+			#nav			
+					{width:960px;background:#666;
+					color:#fff; 
+					align: center; 
+					font-family: Verdana, sans-serif;
+					}
+			#nav a			
+					{color:#fff; padding:15px 20px;display:inline-block; text-decoration:none; text-transform:uppercase;font-family:oswald;}
+			#nav a:hover	
+					{background:#333;}
+			
+			.slider-wrapper	{width:100%;}
+			
+			.item-evi		{width:320px;padding:20px;float:left; background: white; font-size: 16px;}
+			
+			
+			
+			.button {
+				  display: inline-block;
+				  border-radius: 6px;
+				  background-color: #E01F25;
+				  border: none;
+				  color: #FFFFFF;
+				  text-align: center;
+				  font-size: 18px;
+				  padding: 20px;
+				  width: 270px;
+				  transition: all 0.5s;
+				  cursor: pointer;
+				  margin: 5px;
+				  
+				}
+
+			.button a {
+				  cursor: pointer;
+				  display: inline-block;
+				  position: relative;
+				  transition: 0.5s;
+				}
+
+			.button a:after {
+				  content: '\00bb';
+				  position: absolute;
+				  opacity: 0;
+				  top: 0;
+				  right: -20px;
+				  transition: 0.5s;
+				}
+
+			.button:hover a {
+				  padding-right: 25px;
+				}
+
+			.button:hover a:after {
+				  opacity: 1;
+				  right: 0;
+				}
+				
+			hr{
+				color: #00f;
+				background: #00f;
+				border: 0;
+				height: 1px;}
+				
+			.Social {
+				background-color: black;
+				right: 500px;
+			}
+			
+			
+			/* Popup */
+			
+			.overlay {
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				z-index: 10;
+				display: none;
+			
+				background-color: rgba(0, 0, 0, 0.65);
+				position: fixed; /* posizionamento fisso */
+				cursor: default; /* tipo del cursore */
+			}
+	
+			.overlay:target {
+				display: block;
+			}
+		
+			.popup {
+				top: -100%;
+				right: 0;
+				left: 50%;
+				font-size: 14px;
+				z-index: 20;
+				margin: 0;
+				width: 85%;
+				min-width: 520px;
+				max-width: 800px;
+	
+				position: fixed;
+				padding: 15px;
+				border: 1px solid #383838;
+				background: #fefefe;
+		
+				-webkit-border-radius: 4px;
+				-moz-border-radius: 4px;
+				-ms-border-radius: 4px;
+				border-radius: 4px;
+				font: 14px/18px 'Tahoma', Arial, sans-serif;
+		
+					box-shadow: 0 15px 20px rgba(0,0,0,.22),0 19px 60px rgba(0,0,0,.3);
+				   transform: translate(-50%, -500%);
+				transition: transform 0.6s ease-out;
+			}
+			
+			.overlay:target+.popup {
+				transform: translate(-50%, 0);
+				top: 20%;
+			}
+			
+			.close {
+				top: -10px;
+				right: -10px;
+				width: 20px;
+				height: 20px;
+				position: absolute;
+				padding: 0;
+				border: 2px solid #ccc;
+				border-radius: 15px;
+				background-color: rgba(61, 61, 61, 0.8);
+				box-shadow: 0px 0px 10px #000;
+				text-align: center;
+				text-decoration: none;
+				font: 13px/20px 'Tahoma', Arial, sans-serif;
+				font-weight: bold;
+				transition: all ease .8s;
+			}
+			.close:before {
+				color: rgba(255, 255, 255, 0.9);
+				content: "X";
+				text-shadow: 0 -1px rgba(0, 0, 0, 0.9);
+				font-size: 12px;
+			}
+			.close:hover {
+				background-color: rgba(252, 20, 0, 0.8);
+				transform: rotate(360deg);    
+			}
+			
+			.popup img {
+				width: 100%;
+				height: auto;
+			}
+			/* miniatura a destra/sinistra  */
+			.pic-left, 
+			.pic-right {
+				width: 25%;
+				height: auto;
+			}
+			.pic-left {
+				float: left;
+				margin: 5px 15px 5px 0;
+			}
+			.pic-right {
+				float: right;
+				margin: 5px 0 5px 15px;
+			}
+			/* elemento media, frame  */
+			.popup embed, 
+			.popup iframe {
+				top: 0;
+				right: 0;
+				bottom: 0; 
+				left: 0; 
+				display:block;
+				margin: auto;
+				min-width: 320px;
+				max-width: 600px;
+				width: 100%;
+			}
+			.popup h2 { /* titolo 2 */
+				margin: 0;
+				color: #008000;
+				padding: 5px 0px 10px;
+				text-align: left;
+				text-shadow: 1px 1px 3px #adadad;
+				font-weight: 500;
+				font-size: 1.4em;
+				font-family: 'Tahoma', Arial, sans-serif;
+				line-height: 1.3;
+			}
+		
+			.popup p {margin: 0; padding: 5px 0}
+			
+			.position
+				{
+					 width: 4px;
+					 height: 3px;
+					
+					 bottom: 5 px;
+					 position: relative;
+					 
+					
+				}
+			
+			/* style font */
+			p.Lato{
+				font-style: Lato;
+				background-color: white;
+				font-size: 18px;
+				}
+			
+		</style
+	
+	
+		<link rel="stylesheet" href="css/nivo-slider.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="css/default.css" type="text/css" media="screen" />
+
+		<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+  
+		<script type="text/javascript" src="js/jquery.nivo.slider.js"></script>
+    
+		<script type="text/javascript">
+		$(window).load(function() {
+			$('#slider').nivoSlider();
+		});
+		</script>
+		
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css'>
+		
+	</head>
+	<link rel="stylesheet" href="slider.css">
+
+	<body>
+	
+	
+		<div class = "position">
+		
+			<audio controls autoplay>
+			  <source src="Disobey.mp3" type="audio/mp3" align="center" autostart="true" width="130" height="55">
+			</audio> 
+		</div> 
+		
+		<div id="container">
+
+			<div id="header">
+			   <center> <img src="Salmo_Logo2.png" width="224" height="69" align="center" alt="Logo Salmo" title="Logo Salmo"></center> 
+			</div>
+	
+		
+		
+		 <div id="nav" align="center">
+			<a href="index.html" target="_blank">Home</a>
+			<a>Biografia</a>
+			<a href="discografia.html" target="_blank">Discografia</a>
+			<a href="Sull'autore.html" target="_blank">Sull'autore</a>
+			<a href="Info.html" target="_blank">Info sul sito</a>
+		 
+		</div>
+		
+	
+		<br>
+		<br>
+		<center> <a href="#win5"><img title="Scheda informativa" src="Scheda informativa.png" alt="Scheda Informativa" title="Scheda Informativa"/></a></center> 
+		<a href="#x" class="overlay" id="win5"></a>
+		<div class="popup">
+		<img class="is-image" src="Scheda informativa.png" alt="" />
+		<a class="close" title="Chiudere" href="#close"></a>
+		</div>
+
+		<br>
+		<br>
+		
+		<p class="Lato" style = "border:10px solid #FFFFFF">
+			SALMO (Maurizio Pisciottu, classe 1984) è un pionieristico artista sardo ormai di stanza a Milano, dove vive e lavora insieme alla sua crew, il collettivo Machete, in una factory warholiana che è casa e studio insieme, animata da rappers, produttori, grafici e videomakers.
+			Da Olbia a Milano, dall’ambiente metal, punk-rock e hardcore dell’Isola, in un solo anno SALMO si è preso la scena rap italiana (oltre 40 milioni di visualizzazioni sul suo canale YouTube ufficiale) e ne ha cambiato i connotati di genere, introducendovi elementi di elettronica e rap hardcore come qui in Italia ancora non si era visto. 
+			Prima di approdare definitivamente al rap, SALMO ha militato in gruppi hardcore, dagli Skasico (con cui ha prodotto 3 album e girato l’Europa) ai Three Pigs ai To Ed Gein, con cui ha partecipato all’Heineken Jammin Festival di Venezia nel 2008. 
+			<br>
+			<br>
+			Nel 2011, dopo un’incessante attività live cominciata 13 anni prima, Salmo produce il primo disco solista “The Island Chainshaw Massacre” in cui si mischiano sonorità elettroniche e rap anni ’90, tratto distintivo e rivoluzionario per il panorama rap italiano.
+			Lo stesso anno si trasferisce a Milano e, a inizio 2012, in una sola settimana darà vita per Tanta Roba – l’etichetta indipendente di Guè Pequeno e Dj Harsh- all’album della svolta: “Death USB“: subito primo in classifica su iTunes nella settimana di Sanremo.
+			<br>
+			<br>
+			Salmo diventa l’artista più cliccato, in testa ai big della musica italiana e internazionale. L’attività live occupa un posto centrale nell’attitudine dell’artista che trova sul palco la sua naturale e autentica dimensione, a contatto col suo pubblico che è trasversale come il suo personaggio e la sua proposta musicale, pesantemente contaminata e in continua evoluzione.
+			<br>
+			<br>
+			Il 2 Aprile 2013 è uscito, sempre per Tanta Roba Label, il nuovo disco “Midnite“,una lavoro di 13 tracce. Midnite ha raggiunto, dopo una settimana dall’uscita, il primo posto tra gli album più venduti in Italia fino ad arrivare alla conquista del Disco d’Oro.
+			Nello stesso anno Salmo assieme ai suoi musicisti (basso, chitarra, batteria e Dj) prepara il rivoluzionario “Midnite live session Tour”, che lo ha visto impegnato nelle maggiori città italiane, riscuotendo grande successo tra il pubblico e gli addetti ai lavori.
+			<br>
+			<br>
+			Nel mese di Maggio 2014 Salmo annuncia la propria uscita dall’etichetta Tanta Roba per iniziare il suo nuovo progetto discografico in Machete Empire, nello stesso periodo inoltre decide di fondare la “Lebonski agency”, società di booking e management.
+			Per l’estate 2014 è uscito “Documentary”, un video – reportage del suo ultimo tour.
+			<br>
+			<br>
+			Anticipato dal singolo “1984”, a febbraio 2016 Salmo pubblica il suo nuovo album di inediti “Hellvisback”. L’album ottiene ottimi risultati di vendita diventando Disco di platino. Nel novembre dello stesso anno “Hellvisback” viene ristampato con l’aggiunta di un secondo disco contenente due inediti, tra cui il singolo Don Medellín, e 13 brani eseguiti dal vivo.
+			Il 21 luglio 2017 Salmo pubblica il singolo “Estate dimmerda”, la canzone supera i sei milioni di visualizzazioni su YouTube.
+		
+		</p>
+	
+	
+		
+		
+		
+		
+	
+	
+
+		
+	</body>
+	
+	</html>
