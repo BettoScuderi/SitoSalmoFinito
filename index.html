@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+	<head>
+	<!-- uso css per lo sfondo, per il menu e per l'audio -->
+		<style>	
+			
+			html,body
+				{margin:0;padding:0;}
+			body
+				{margin:0; padding:0;background: #C20000; color: #666;font: 16px/28px;font-family: 'Open Sans', sans-serif; line-height:22px;}
+			h1,h2
+				{font-family:oswald;text-transform:uppercase;font-weight:normal;}
+			a
+				{color:#21aabd;text-decoration:none;}
+			a:hover
+				{color:#333;text-decoration:underline;}
+
+			
+	#container		{width: 960px;margin: 0 auto;background:#fff}
+	
+	#header			{width:920px;padding:20px;background:#21aabd;}
+			#header h1	{color:#fff;}
+
+			audio { max-width: 200px; right: 650px;}
+			
+		
+				
+				
+			#header	{width:960px;padding:20px;background:#C20000;}
+
+			#container	{width: 960px;margin: 0 auto;background:#fff}
+			
+			#nav			
+					{width:960px;background:#666;
+					color:#fff; 
+					align: center; 
+					font-family: Verdana, sans-serif;
+					}
+			#nav a			
+					{color:#fff; padding:15px 20px;display:inline-block; text-decoration:none; text-transform:uppercase;font-family:oswald;}
+			#nav a:hover	
+					{background:#333;}
+			
+			.slider-wrapper	{width:100%;}
+			
+			.item-evi		{width:320px;padding:20px;float:left; background: white; font-size: 16px;}
+			
+			
+			
+			.button {
+				  display: inline-block;
+				  border-radius: 6px;
+				  background-color: #E01F25;
+				  border: none;
+				  color: #FFFFFF;
+				  text-align: center;
+				  font-size: 18px;
+				  padding: 20px;
+				  width: 270px;
+				  transition: all 0.5s;
+				  cursor: pointer;
+				  margin: 5px;
+				  
+				}
+
+			.button a {
+				  cursor: pointer;
+				  display: inline-block;
+				  position: relative;
+				  transition: 0.5s;
+				}
+
+			.button a:after {
+				  content: '\00bb';
+				  position: absolute;
+				  opacity: 0;
+				  top: 0;
+				  right: -20px;
+				  transition: 0.5s;
+				}
+
+			.button:hover a {
+				  padding-right: 25px;
+				}
+
+			.button:hover a:after {
+				  opacity: 1;
+				  right: 0;
+				}
+				
+			hr{
+				color: #00f;
+				background: #00f;
+				border: 0;
+				height: 1px;}
+				
+			.Social {
+				background-color: black;
+				right: 500px;
+			}
+			
+		</style
+	
+	
+		<link rel="stylesheet" href="css/nivo-slider.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="css/default.css" type="text/css" media="screen" />
+
+		<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+  
+		<script type="text/javascript" src="js/jquery.nivo.slider.js"></script>
+    
+		<script type="text/javascript">
+		$(window).load(function() {
+			$('#slider').nivoSlider();
+		});
+		</script>
+		
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css'>
+		
+	</head>
+	<link rel="stylesheet" href="slider.css">
+
+	<body>
+	
+		<!-- AUDIO -->
+		<div class = "position">
+		
+			<audio controls autoplay>
+			  <source src="1984.mp3" type="audio/mp3" align="center" width="130" height="55">
+			</audio> 
+		</div>
+		
+		<div id="container">
+			
+		<!-- Logo Salmo -->	
+			<div id="header">
+			   <center> <img src="Salmo_Logo2.png" width="224" height="69" align="center" alt="Logo Salmo" title="Logo Salmo"></center> 
+			</div>
+		
+		
+		<!-- Menu -->
+		 <div id="nav" align="center">
+			<a>Home</a>
+			<a href="biografia.html" target="_blank">Biografia</a>
+			<a href="discografia.html" target="_blank">Discografia</a>
+			<a href="Sull'autore.html" target="_blank">Sull'autore</a>
+			<a href="Info.html" target="_blank"">Info sul sito</a>
+		 
+		</div>
+		
+	
+	<!-- slides -->
+	
+	
+	<div class="w3-content w3-display-container">
+		<img class="mySlides" src="Doomsday-x-Famous-01.jpg" style="width:960px;">
+		<img class="mySlides" src="IMG_6810.png" style="width:960px; hight: 540px">
+		<img class="mySlides" src="salmo_slide.jpg" style="width:100%">
+
+		<button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+		<button class="w3-button w3-display-right" onclick="plusDivs(+1)">&#10095;</button>	
+	</div>
+	
+	<br>
+	
+	<!-- ALBUM -->
+	<h3 align= "center"> ACQUISTA GLI ALBUM</h3>
+		<div class="item-evi">
+			<p align"center">The Island Chainsaw Massacre</p>
+			<img src="chainsaw massacre.jpg" width="280" height="250" alt="The Island Chainsaw Massacre" title="The Island Chainsaw Massacre">
+			<button class ="button" style="vertical-align:middle"><a href="https://www.amazon.it/Island-Chainsaw-Massacre-Explicit/dp/B008VVBG2G/ref=sr_1_5?ie=UTF8&qid=1520708397&sr=8-5&keywords=salmo" target="_blank">Buy</a></button>
+		</div>
+		
+		<div class="item-evi">
+			<h3 align="center">Death USB</h3>
+			<img src="deathUSB.jpg" width="280" height="250" alt="Death USB" title="Death USB">
+			<button class ="button" style="vertical-align:middle"><a href="https://www.amazon.it/Death-USB-Explicit-Salmo/dp/B0106LJZT4/ref=sr_1_6?ie=UTF8&qid=1520708397&sr=8-6&keywords=salmo" target="_blank">Buy</a></button>
+		</div>
+		
+		<div class="item-evi">
+			<h3 align="center">Midnite</h3>
+			<img src="midnite.jpg" width="280" height="250" alt="Midnite" title="Midnite">
+			<button class ="button" style="vertical-align:middle"><a href="https://www.amazon.it/Midnite-Deluxe-Version-Explicit-Salmo/dp/B0106LP84K/ref=ice_ac_b_dpb?ie=UTF8&qid=1520710768&sr=8-1&keywords=salmo+midnite" target="_blank">Buy</a></button>
+		</div>
+		<div class="item-evi">
+			<p align"center">The Island Chainsaw Massacre (Reloaded)</p>
+			<img src="the island chainsaw massacre (reloaded).jpg" width="280" height="250" alt="The Island Chainsaw Massacre (Reloaded)" title="The Island Chainsaw Massacre (Reloaded)">
+			<button class ="button" style="vertical-align:middle"><a href="https://www.amazon.it/Chainsaw-Massacre-Ultimate-Reloaded-Explicit/dp/B00IO89ZY2/ref=sr_1_1?ie=UTF8&qid=1520713319&sr=8-1&keywords=salmo+The+Island+Chainsaw+Massacre+reloaded" target="_blank">Buy</a></button>
+		</div>
+		<div class="item-evi" style="text-align:center">
+			<h3 align="center">S.A.L.M.O. Documentary </h3><br>
+			<img src="S.A.L.M.O. Documentary.jpg" width="280" height="250" alt="Hellvisback" title="Hellvisback">
+			<button class ="button" style="vertical-align:middle"><a href="https://www.amazon.it/S-L-M-Documentary-Explicit/dp/B00L0Z1XSC/ref=ice_ac_b_dpb?ie=UTF8&qid=1520714084&sr=8-1&keywords=salmo+documentary" target="_blank">Buy</a></button>
+		</div>
+		<div class="item-evi" style="text-align:center">
+			<h3 align="center">Hellvisback</h3><br>
+			<img src="Hellvisback.jpg" width="280" height="250" alt="Hellvisback" title="Hellvisback">
+			<button class ="button" style="vertical-align:middle"><a href="https://www.amazon.it/dp/B019GGY0BI/ref=sxts_sxwds-puwylo_sim_3?pf_rd_m=A11IL2PNWYJU7H&pf_rd_p=1670647927&pd_rd_wg=dQaUM&pf_rd_r=WR443129X3WBV4MPA9J5&pf_rd_s=desktop-sx-top-slot&pf_rd_t=301&pd_rd_i=B019GGY0BI&pd_rd_w=mS0fu&pf_rd_i=salmo&pd_rd_r=2fa864f0-9586-4979-93bc-cca77aac2559&ie=UTF8&qid=1520713089&sr=3" target="_blank">Buy</a></button>
+		</div>
+		
+
+	
+	
+		<hr align="left" size="3? width="300? color="gray" noshade>
+		
+			
+		<!-- Social -->	
+		<div class="Social">
+			
+			<center>
+				<p>&nbsp;</p>
+				<br>
+				
+				<a href="https://it-it.facebook.com/salmoofficial/" target="_blank">
+					<img src="facebook.png" class="Social" width="40" height="40" alt="Facebook" title="Facebook"> &nbsp;
+				</a>
+				
+				<a href="https://twitter.com/salmolebon" target="_blank">
+					<img src="twitter.png" class="Social" width="40" height="40" alt="Twitter" title="Twitter">&nbsp;
+				</a>
+				
+				<a href="https://www.youtube.com/channel/UCxPh2QJU5qTvOqxnOPTBskw" target="_blank">
+					<img src="youtube.png" class="Social" width="40" height="40" alt="Youtube" title="Youtube">&nbsp;
+				</a>
+				
+				<a href="https://www.instagram.com/lebonwski/" target="_blank">
+					<img src="instagram.png" class="Social" width="40" height="40" alt="Instagram" title="Instagram">&nbsp;
+				</a>
+				
+				<br>
+				<p>&nbsp;</p>
+				
+			
+			</center>
+		</div>	
+		
+		
+		
+		
+	
+	<script>
+		var slideIndex = 1;
+		showDivs(slideIndex);
+
+		function plusDivs(n) {
+		  showDivs(slideIndex += n);
+		}
+
+		function showDivs(n) {
+		  var i;
+		  var x = document.getElementsByClassName("mySlides");
+		  if (n > x.length) {slideIndex = 1}    
+		  if (n < 1) {slideIndex = x.length}
+		  for (i = 0; i < x.length; i++) {
+			 x[i].style.display = "none";  
+		  }
+		  x[slideIndex-1].style.display = "block";  
+		}
+	</script>
+
+		
+	</body>
+	
+	</html>
